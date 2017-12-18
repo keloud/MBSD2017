@@ -173,7 +173,7 @@
 
     * CVSS v3の影響評価の際に、評価基準をもとにExcelで影響度を自動的に算出するシートを作成した。
 
-	![Picture/image alt text](image_0.png)
+	![image alt text](Picture/image_0.png)
 
 # 発見した脆弱性詳細
 
@@ -307,7 +307,7 @@
 
 * 今回は、アプリケーション・プログラムのディレクトリ内にphpinfo関数のみが記述されたphpinfo.phpというファイルがあり、これをディレクトリトラバーサルによって実行して設定情報を出力した。
 
-![Picture/Picture/image alt text](image_1.png)
+![image alt text](Picture/image_1.png)
 
 * 以下のコマンドによって出力できた。
 
@@ -385,17 +385,17 @@
 
 	[解説]
 
-![Picture/Picture/image alt text](image_2.png)
+![image alt text](Picture/image_2.png)
 
 * APIは全ての操作においてmodeパラメータ で操作を指定する必要がある。このとき、内部ではアプリケーションを構成するMBSD_Bankディレクトリの中にあるmodeディレクトリに、機能ごとにphp作成されたプログラムを呼び出すという処理が行われている。APIが呼び出されるたびにmodeパラメータの値をファイルパスとして挿入し、 各PHPプログラムを呼び出す。例えば、mode="user”というパラメータならば、実際の処理はMBSD_Bank/mode/user.phpを呼び出すというものになる。
 
 しかしながら、modeパラメータに関して、特別な文字列を置き換えるエ スケープ処理がなされておらず、そのままユーザーが入力された値が使われており、また各ファイルのパス指定が相対パスで行われているために、ディレクトリトラバーサルや、ローカル ファイルインクルージョン、nullバイト攻撃が可能な状態となっている。例えば、"mode=../xxx.php”といった相対パスが挿入された場合、実際の処理はMBSD/mode/../xxx.phpを呼び出すといった操作になる。
 
-![Picture/Picture/image alt text](image_3.png)
+![image alt text](Picture/image_3.png)
 
 この脆弱性による具体的な問題については別項として挙げる。
 
-![Picture/Picture/image alt text](image_4.png)
+![image alt text](Picture/image_4.png)
 
 index.phpのソースコード該当部
 
@@ -485,11 +485,11 @@ index.phpのソースコード該当部
 
 * SSL証明書に、自己証明書が使用されている。 本来、SSL証明書は信頼のあるCA(認証局)が発行する証明書を利用することによりドメインやそのドメインを所有する組織の信頼性を客観的に確認することができる。しかし、今回の場合は開発元自身が発行する自己証明書が利用されている。
 
-![Picture/Picture/image alt text](image_5.png)
+![image alt text](Picture/image_5.png)
 
-HTTPS通信でアクセスしようとした場合、自己証明書であるため通信の相手が本物か確認できずにセキュリティ警告が出る。![Picture/Picture/image alt text](image_6.png)Chrome開発者ツールでも"This page is not serucre(broken HTTPS)”といった、HTTPSが安全ではない旨が表示される。
+HTTPS通信でアクセスしようとした場合、自己証明書であるため通信の相手が本物か確認できずにセキュリティ警告が出る。![image alt text](Picture/image_6.png)Chrome開発者ツールでも"This page is not serucre(broken HTTPS)”といった、HTTPSが安全ではない旨が表示される。
 
-![Picture/Picture/image alt text](image_7.png)
+![image alt text](Picture/image_7.png)
 
 SSL証明書の発行先と発行元がともにMBSDとなっている。本来は、発行元が信頼されたSSL認証局の名称でなければならない。
 
@@ -796,7 +796,7 @@ Content-Type: application/json
 
 [解説]
 
-* [http://MBSDサーバー](http://MBSDサーバー/)以下にディレクトリ名を入力し、ブラウザからアクセスすると、ディレクトリの内部の一覧が閲覧できてしまう。![Picture/image alt text](image_8.png)
+* [http://MBSDサーバー](http://MBSDサーバー/)以下にディレクトリ名を入力し、ブラウザからアクセスすると、ディレクトリの内部の一覧が閲覧できてしまう。![image alt text](Picture/image_8.png)
 
 /libディレクトリのファイル一覧
 
@@ -893,7 +893,7 @@ Content-Type: application/json
 
 * APIは個人情報を含むものをHTTPのPOSTメソッドを利用して送信する仕様であるが、HTTPSによるサーバーとクライアント間による通信の暗号化が施されていないため、個人情報を含む情報全てが平文で送信されてしまっている。API自体はHTTPSによる暗号化通信も対応しているが、HTTPでも通信ができてしまうため、不注意や環境によって意図しないHTTPでの平文での通信という人為的インシデントを誘発する可能性がある。
 
-![Picture/image alt text](image_9.png)
+![image alt text](Picture/image_9.png)
 
 	APIのuserを利用した際のクライアントとサーバ間の通信の傍受が可能
 
@@ -905,7 +905,7 @@ Content-Type: application/json
 
 * 現在、ベンダーがサポートするブラウザや端末においてHTTPSで通信できないクライアントはほとんど存在しないため、HTTPSでの通信を強制する。HTTPによるアクセスはWebサーバ側でHTTPSによる通信にリダイレクトすることによってHTTPSでの通信を強	制することができる。
 
-![Picture/image alt text](image_10.png)
+![image alt text](Picture/image_10.png)
 
 現行のブラウザやスマートフォン、フィーチャーフォンのほとんどでSHA-2によるSSL通信を行うことができる。
 
@@ -973,7 +973,7 @@ URL : https://www.geotrust.co.jp/products/resources/compatibility_listing/)
 
 クライアントのIPアドレスを取得するプログラムのソースコードの /util/getrealip.phpではHTTPヘッダに'HTTP_X_FORWARDED_FOR'パラメータがあると、無条件にこの項目の先頭の項目を送信元IPアドレスと判断してしまうため、HTTPヘッダを書き換える事ができれば容易にIP アドレス偽装ができる可能性がある。
 
-		![Picture/image alt text](image_11.png)
+		![image alt text](Picture/image_11.png)
 
 getrealip.phpのソースコード
 
@@ -1039,11 +1039,11 @@ getrealip.phpのソースコード
 
 * /mode/register.phpはAPIのregisterの実装であるが、POSTで送信されたユーザーの登録情報を引数として取得して内容を判定、問題がなければデータベースにユーザ情報の一部を登録、同時に銀行ネットワーク内の基盤システムに情報を送信する 仕組みとなっている。基盤システムに情報を送信する際には/util/send.phpを利用して送信する。しかし、送信前のデータは暗号化されていない。このため、送信時にユーザーの個人情報が平文のまま送信されてしまう。
 
-				![Picture/image alt text](image_12.png)
+				![image alt text](Picture/image_12.png)
 
 register.phpのコード、送信処理のsend.phpが呼び出されるまでの間に暗号化の処理が見当たらない。
 
-ここで、/util/send.phpのソースコードに注目する。![Picture/image alt text](image_13.png)
+ここで、/util/send.phpのソースコードに注目する。![image alt text](Picture/image_13.png)
 
 /util/send.phpのソースコード
 
@@ -1444,7 +1444,7 @@ preg_match("/^[ァ-ヾ]+$/u",$params["name_sei_kana"]) && preg_match("/^[ァ-ヾ
 
 	[解説]
 
-* HTTP パケットヘッダに SESSION-ID が第三者にも閲覧可能な形式で含まれていた。![Picture/image alt text](image_14.png)
+* HTTP パケットヘッダに SESSION-ID が第三者にも閲覧可能な形式で含まれていた。![image alt text](Picture/image_14.png)
 
 	
 
@@ -1512,7 +1512,7 @@ preg_match("/^[ァ-ヾ]+$/u",$params["name_sei_kana"]) && preg_match("/^[ァ-ヾ
 
 	[解説]
 
-* 前項のセッションIDの独自実装であげた脆弱性の具体的な脆弱性の1つであり、セッションIDの発行がSHA1によって行われている。SHA1はハッシュの衝突の可能性が指摘されており、限定的な状況ながらもハッシュの衝突を意図的に起こすことが可能である。そのため、SHA1ハッシュによる衝突によってセッションIDの重複の可能性が排除できないため、セッションIDの発行にSHA1を利用することは望ましくない。コンピュータの性能向上等でセッションIDの衝突を起こすことが容易になった場合に危険性が増す可能性がある。 ![Picture/image alt text](image_15.png)
+* 前項のセッションIDの独自実装であげた脆弱性の具体的な脆弱性の1つであり、セッションIDの発行がSHA1によって行われている。SHA1はハッシュの衝突の可能性が指摘されており、限定的な状況ながらもハッシュの衝突を意図的に起こすことが可能である。そのため、SHA1ハッシュによる衝突によってセッションIDの重複の可能性が排除できないため、セッションIDの発行にSHA1を利用することは望ましくない。コンピュータの性能向上等でセッションIDの衝突を起こすことが容易になった場合に危険性が増す可能性がある。 ![image alt text](Picture/image_15.png)
 
 session.phpのソースコード。セッションIDの発行においてSHA1が利用されている
 
@@ -1588,7 +1588,7 @@ session.phpのソースコード。セッションIDの発行においてSHA1が
 
 * 次に、/etc/sudoersファイルにアクセスした。このファイルは、sudoコマンドを利用してスーパーユーザー権限でコマンドを実行できるユーザーを定義するファイルである。このファイルにshutdownユーザーを追加し、その後VMを再起動した。
 
-* 起動後、ログインシェルにてshutdownユーザーとしてログインすると、終了することなくユーザーとしてシェルにアクセスできた。![Picture/image alt text](image_16.png)
+* 起動後、ログインシェルにてshutdownユーザーとしてログインすると、終了することなくユーザーとしてシェルにアクセスできた。![image alt text](Picture/image_16.png)
 
 ログイン直後のVMの様子。シェル上で任意のコマンドが実行できる。
 
@@ -1866,9 +1866,9 @@ session.phpのソースコード。セッションIDの発行においてSHA1が
 
 * これにより、MBSD銀行システムのデータベースのユーザー情報・預金残高をはじめとした全てのデータ改ざんが可能になる。
 
-* 例えば、UPDATE users SET balance = 5000000000000000;を実行すれば、データベース上のユーザー情報全員の預金残高を![Picture/image alt text](image_17.png)にできる。	![Picture/image alt text](image_18.png)
+* 例えば、UPDATE users SET balance = 5000000000000000;を実行すれば、データベース上のユーザー情報全員の預金残高を![image alt text](Picture/image_17.png)にできる。	![image alt text](Picture/image_18.png)
 
-		ユーザー全員の口座残高を![Picture/image alt text](image_19.png)にした例
+		ユーザー全員の口座残高を![image alt text](Picture/image_19.png)にした例
 
 	
 
@@ -1886,5 +1886,5 @@ session.phpのソースコード。セッションIDの発行においてSHA1が
 
 [備考]
 
-* 僕たちも		![Picture/image alt text](image_20.png)
+* 僕たちも		![image alt text](Picture/image_20.png)
 
