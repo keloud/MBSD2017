@@ -1,11 +1,11 @@
 # MBSD Cybersecurity Challenges
-調査結果報告書
+## 調査結果報告書
 
-[東京電子専門学校](http://www.tokyo-ec.ac.jp/)
+### [東京電子専門学校](http://www.tokyo-ec.ac.jp/)
 
-## チーム：陸のくまさん
+### チーム：陸のくまさん
 
-## メンバー・役割
+### メンバー・役割
 
 熊丸	脆弱性診断・報告書作成
 
