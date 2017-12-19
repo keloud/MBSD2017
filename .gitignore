@@ -1,4 +1,6 @@
-
-*.iml
+# Intellij IDEA
 .idea/
-
+out/
+*.iml
+*.eml
+*.userlibraries
