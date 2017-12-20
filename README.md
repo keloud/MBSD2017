@@ -7,11 +7,11 @@
 
 ### メンバー・役割
 
-熊丸	脆弱性診断・報告書作成
+[kumacky](https://github.com/kumacky)	脆弱性診断・報告書作成
 
-今村	脆弱性診断・報告書作成
+[peachgyoza](https://github.com/peachgyoza)	脆弱性診断・報告書作成
 
-森本	脆弱性診断・報告書作成・CVSS評価
+[Keloud](https://github.com/keloud)	脆弱性診断・報告書作成・CVSS評価
 
 ## 目次
 
