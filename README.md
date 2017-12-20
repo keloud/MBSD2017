@@ -8,14 +8,17 @@
 ### メンバー・役割
 
 [kumacky](https://github.com/kumacky)
+
 	* 脆弱性診断
 	* 報告書作成
 
 [peachgyoza](https://github.com/peachgyoza)
+
 	* 脆弱性診断
 	* 報告書作成
 
 [Keloud](https://github.com/keloud)
+
 	* 脆弱性診断
 	* 報告書作成
 	* CVSS評価
