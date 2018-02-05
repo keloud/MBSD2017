@@ -538,9 +538,8 @@ SSL証明書の発行先と発行元がともにMBSDとなっている。本来�
 
 登録済みの5つのアカウントで確認した。
 
-<table>
-  <tr>
-    <td>HTTP/1.1 200 OK
+
+~~~HTTP/1.1 200 OK
 Date: Wed, 08 Nov 2017 16:45:52 GMT
 Server: Apache
 X-Frame-Options: SAMEORIGIN
@@ -549,9 +548,8 @@ Keep-Alive: timeout=5, max=97
 Connection: Keep-Alive
 Content-Type: application/json
 
-{"msg":"ok","session":"d7904537361ce71801751a505d3ef52f2f63b754","user":{"id":"6","bankcode":"3174688","activate":"1","loginid":"mbsd101","branch_code":"001","name_sei":"\u963f\u4e45\u6fa4","name_mei":"\u570b\u96c4","name_sei_kana":"\u30a2\u30af\u30b6\u30ef","name_mei_kana":"\u30af\u30cb\u30aa","balance":"100000","otpbase":"BMLPKLL57Z3HL3SI"}}</td>
-  </tr>
-</table>
+{"msg":"ok","session":"d7904537361ce71801751a505d3ef52f2f63b754","user":{"id":"6","bankcode":"3174688","activate":"1","loginid":"mbsd101","branch_code":"001","name_sei":"\u963f\u4e45\u6fa4","name_mei":"\u570b\u96c4","name_sei_kana":"\u30a2\u30af\u30b6\u30ef","name_mei_kana":"\u30af\u30cb\u30aa","balance":"100000","otpbase":"BMLPKLL57Z3HL3SI"}}
+~~~
 
 
 \[想定される被害・影響]
